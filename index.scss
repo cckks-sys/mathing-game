@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    background: linear-gradient(to top left, #AED581, #FFF9C4);
+}
+
+header {
+    p {
+        margin: 0;
+        font-weight: lighter;
+        font-size: 1.6rem;
+        text-align: center;
+        line-height: 1.5;
+        padding: 12px 15px;
+    }
+
+    .game-message {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+}
+
+:root {
+    --cube-size: 150px;
+    --cube-gap: 20px;
+}
+
+.content {
+    @media screen and (max-width:700px){
+        --cube-size:110px;
+        --cube-gap:15px;
+    }
+    @media screen and (max-width:500px) {
+        --cube-size: 100px;
+        --cube-gap: 10px;
+    }
+    
+    margin: auto;
+    margin-top:20px;
+    background: linear-gradient(to right bottom, #4FC3F7, #9575CD);
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    grid-gap: var(--cube-gap);
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 8px;
+    width:calc(4 * var(--cube-size) + var(--cube-gap) * 3);
+    height:calc(4 * var(--cube-size) + var(--cube-gap) * 3);
+    overflow: hidden;
+    padding:var(--cube-gap);
+
+    .cube {
+        background-color: #37474F;
+        border-radius: 6px;
+        width: var(--cube-size);
+        height: var(--cube-size);
+        color: transparent;
+        font-size: 1.6em;
+        text-align: center;
+        line-height: var(--cube-size);
+        cursor: pointer;
+
+        &.accomplish {
+            color: #eee;
+            background-color: #009688;
+        }
+
+        &.active {
+            color: #eee;
+            background-color: #009688;
+        }
+    }
+}
